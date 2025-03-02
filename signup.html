@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #6b46c1, #9f7aea, #f687b3;
+        }
+        .container {
+            width: 350px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .toggle {
+            margin-top: 15px;
+            cursor: pointer;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container" id="signupContainer" style="display: none;">
+        <h2>Sign Up</h2>
+        <input type="text" placeholder="Full Name" required>
+        <input type="text" placeholder=" set a Username" required>
+        <input type="number" placeholder="phone no" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+
+        <button>Sign Up</button>
+        <p class="toggle" onclick="toggleForm()">Already have an account? Login</p>
+    </div>
+    
+    <script>
+        function toggleForm() {
+            let login = document.getElementById("loginContainer");
+            let signup = document.getElementById("signupContainer");
+            
+            if (login.style.display === "none") {
+                login.style.display = "block";
+                signup.style.display = "none";
+            } else {
+                login.style.display = "none";
+                signup.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
